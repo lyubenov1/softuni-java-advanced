@@ -39,7 +39,7 @@ public class ThePartyReservationFilterModule {
 
             Predicate<String> startsWith = name -> name.startsWith(toCheck);
             Predicate<String> endsWith = name -> name.endsWith(toCheck);
-            Predicate<String> validLenght = name -> name.length() == Integer.parseInt(toCheck);
+            Predicate<String> validLength = name -> name.length() == Integer.parseInt(toCheck);
             Predicate<String> containsLetter = name -> name.contains(toCheck);
 
             switch (type) {
@@ -50,7 +50,7 @@ public class ThePartyReservationFilterModule {
                     names.removeIf(endsWith);
                     break;
                 case "Length":
-                    names.removeIf(validLenght);
+                    names.removeIf(validLength);
                     break;
                 case "Contains":
                     names.removeIf(containsLetter);
